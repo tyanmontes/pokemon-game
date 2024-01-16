@@ -2,7 +2,8 @@
     <div class="options-container">
         <ul>
             <li  v-for="pokemon in pokemons" 
-                 :key="pokemon.id">
+                 :key="pokemon.id"
+                 @click="$emit( 'selection', pokemon.id )">
                 {{ pokemon.name }}
             </li>
         </ul>
@@ -23,6 +24,7 @@ export default{
 /* Pokemon Options */
 ul {
     list-style-type: none;
+    padding: 0;
 }
 li {
     background-color: white;
@@ -41,5 +43,4 @@ li:hover {
     display: flex;
     justify-content: center;
 }
-
 </style>
